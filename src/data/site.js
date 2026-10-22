@@ -1,12 +1,11 @@
 // Central site content. Replace placeholder values with real NTUIA details.
 export const site = {
   name: 'NTUIA',
-  fullName: 'NTUIA Association', // TODO: replace with the full organisation name
-  tagline: 'Connecting members through events, knowledge, and community.',
+  fullName: 'NTU India Association',
+  tagline: 'The Indian community at National Taiwan University, Taipei.',
   email: 'info@ntuia.org',
-  phone: '+1 (000) 000-0000',
-  address: '123 Placeholder Street, City, Country',
-  founded: 2010,
+  phone: '+886 (placeholder)',
+  address: 'National Taiwan University, No. 1, Sec. 4, Roosevelt Rd., Taipei, Taiwan',
   social: [
     { label: 'Facebook', url: 'https://facebook.com/' },
     { label: 'LinkedIn', url: 'https://linkedin.com/' },

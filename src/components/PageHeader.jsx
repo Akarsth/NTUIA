@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { site } from '../data/site.js'
+import { StringLights } from './festive/Decorations.jsx'
 
 export default function PageHeader({ title, subtitle }) {
   useEffect(() => {
@@ -8,6 +9,7 @@ export default function PageHeader({ title, subtitle }) {
 
   return (
     <section className="page-header">
+      <StringLights />
       <div className="container">
         <h1>{title}</h1>
         {subtitle && <p>{subtitle}</p>}

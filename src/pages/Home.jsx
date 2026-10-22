@@ -5,12 +5,13 @@ import { events } from '../data/events.js'
 import { news } from '../data/news.js'
 import { isUpcoming } from '../utils.js'
 import EventCard from '../components/EventCard.jsx'
+import DiwaliHero from '../components/festive/DiwaliHero.jsx'
 import NewsCard from '../components/NewsCard.jsx'
 
 const highlights = [
-  { title: 'Community', text: 'A welcoming network of members, alumni, and friends who support one another.' },
-  { title: 'Events', text: 'Workshops, cultural celebrations, and networking evenings throughout the year.' },
-  { title: 'Growth', text: 'Mentorship, scholarships, and career resources to help members thrive.' },
+  { title: 'Community', text: 'A home away from home for Indian students, researchers, and friends at NTU.' },
+  { title: 'Celebrations', text: 'Diwali, Holi, Independence Day, and cultural nights shared with all of Taiwan.' },
+  { title: 'Support', text: 'Help with settling in Taipei, academics, careers, and everyday life in Taiwan.' },
 ]
 
 export default function Home() {
@@ -23,16 +24,20 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
-        <div className="container hero__inner">
-          <p className="eyebrow">Welcome to {site.name}</p>
-          <h1>{site.tagline}</h1>
-          <p className="hero__lead">
-            Since {site.founded}, {site.name} has brought people together to learn, celebrate, and give back.
-          </p>
-          <div className="hero__actions">
-            <Link to="/events" className="btn btn--accent">Upcoming events</Link>
-            <Link to="/about" className="btn btn--ghost">Learn more</Link>
+      <DiwaliHero />
+
+      <section className="section section--alt">
+        <div className="container banner-feature">
+          <img
+            src="/images/jashn-e-diwali-2026.webp"
+            alt="NTU India Association, Jashn-e-Diwali 2026: Call for Volunteers"
+            width="1638"
+            height="574"
+          />
+          <div className="banner-feature__text">
+            <p className="script-accent">Be part of the celebration</p>
+            <p>Help with decorations, rangoli, food, performances, or hosting. Every pair of hands makes the night brighter.</p>
+            <Link to="/contact" className="btn btn--primary">Sign up to volunteer</Link>
           </div>
         </div>
       </section>

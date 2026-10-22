@@ -1,0 +1,163 @@
+/* ================= Jashn-e-Diwali festive theme ================= */
+
+/* ---------- Hero layout ---------- */
+.dhero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: clamp(560px, 82vh, 760px);
+  display: grid;
+  place-items: center;
+  padding: 120px 0 150px;
+  background:
+    radial-gradient(ellipse at 50% 38%, #fffaf0 0%, #fdf1d8 45%, #f8e3bd 100%);
+  text-align: center;
+}
+.dhero__glow {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(circle at 20% 85%, rgba(245, 165, 36, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 85%, rgba(245, 165, 36, 0.18), transparent 35%);
+}
+.dhero__content { position: relative; z-index: 3; max-width: 780px; }
+.dhero__content::before { content: ''; position: absolute; inset: -40px -60px; z-index: -1; background: radial-gradient(ellipse at center, rgba(255, 250, 240, 0.9) 30%, rgba(255, 250, 240, 0) 70%); }
+.dhero__title {
+  font-size: clamp(2.1rem, 6.2vw, 4.4rem);
+  margin: 0.15em 0 0.05em;
+  color: var(--primary);
+  text-shadow: 0 2px 0 rgba(201, 150, 43, 0.25);
+}
+.dhero__script {
+  font-family: var(--font-script);
+  color: var(--saffron);
+  font-size: clamp(1.6rem, 3.6vw, 2.5rem);
+  margin: 0 0 0.6em;
+}
+.dhero__lead { font-size: 1.12rem; color: var(--muted); max-width: 620px; margin-inline: auto; }
+.dhero__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn--outline { border-color: var(--primary); color: var(--primary); background: transparent; }
+.btn--outline:hover { background: var(--primary); color: #fff; }
+
+.ornament { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0; }
+.ornament__text { font-family: var(--font-display); font-weight: 600; color: var(--primary); letter-spacing: 0.06em; font-size: clamp(0.95rem, 2vw, 1.15rem); }
+.ornament__line { width: clamp(30px, 8vw, 80px); height: 2px; background: linear-gradient(90deg, transparent, var(--gold)); position: relative; }
+.ornament__line:last-child { transform: scaleX(-1); }
+.ornament__line::after { content: '❖'; position: absolute; right: -6px; top: -11px; color: var(--gold); font-size: 14px; }
+
+/* ---------- String lights ---------- */
+.string-lights { position: absolute; top: 0; left: 0; right: 0; height: 70px; z-index: 2; pointer-events: none; }
+.string-lights svg { width: 100%; height: 60px; display: block; }
+.bulb {
+  position: absolute; width: 10px; height: 14px; margin-left: -5px;
+  border-radius: 50% 50% 45% 45%;
+  background: var(--c);
+  box-shadow: 0 0 10px 3px color-mix(in srgb, var(--c) 70%, transparent);
+}
+.bulb::before { content: ''; position: absolute; top: -4px; left: 2px; width: 6px; height: 5px; background: #7a4a2a; border-radius: 2px; }
+
+/* ---------- Hanging lanterns and garlands ---------- */
+.dhero__hangers { position: absolute; top: 0; display: flex; align-items: flex-start; gap: clamp(6px, 2vw, 26px); z-index: 2; pointer-events: none; }
+.dhero__hangers--left { left: clamp(8px, 3vw, 48px); }
+.dhero__hangers--right { right: clamp(8px, 3vw, 48px); }
+.lantern-hang, .garland { transform-origin: top center; }
+.lantern-glow { filter: drop-shadow(0 0 6px #ffd36b); }
+
+/* ---------- Diyas ---------- */
+.dhero__diya { position: absolute; bottom: 26px; z-index: 3; }
+.dhero__diya--left { left: clamp(70px, 14vw, 230px); }
+.dhero__diya--right { right: clamp(70px, 14vw, 230px); }
+.flame { transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* ---------- Rangoli ---------- */
+.dhero__rangoli { position: absolute; bottom: -110px; z-index: 1; opacity: 0.95; }
+.dhero__rangoli--left { left: -90px; }
+.dhero__rangoli--right { right: -90px; }
+
+/* ---------- Skyline, sparkles, sky lanterns ---------- */
+.dhero__skyline { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 40%; color: var(--gold); opacity: 0.3; z-index: 0; }
+.sparkles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.sparkle { position: absolute; opacity: 0.75; }
+.sky-lanterns { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sky-lantern { position: absolute; opacity: 0.8; filter: drop-shadow(0 0 8px rgba(255, 190, 80, 0.8)); }
+
+.fireworks { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.petals { position: absolute; inset: 0; z-index: 4; pointer-events: none; overflow: hidden; }
+.petal { position: absolute; top: -20px; border-radius: 60% 0 60% 0; opacity: 0.85; animation-name: petal-fall; animation-timing-function: linear; animation-iteration-count: infinite; }
+
+/* Page headers on inner pages get a small string of lights */
+.page-header .string-lights { height: 50px; }
+.page-header .string-lights svg { height: 40px; }
+.page-header h1 { position: relative; z-index: 3; }
+
+/* ---------- Volunteer banner on Home ---------- */
+.banner-feature { display: grid; gap: 20px; }
+.banner-feature img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
+.banner-feature__text { text-align: center; }
+.script-accent { font-family: var(--font-script); color: var(--saffron); font-size: 1.5rem; }
+
+/* ---------- Motion control panel ---------- */
+.motion-panel { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 90; display: grid; justify-items: end; gap: 10px; }
+.motion-panel__fab {
+  background: var(--primary); color: #fff6e0; border: 0; border-radius: 999px; padding: 10px 16px;
+  font: 600 0.92rem 'Mukta', system-ui, sans-serif; cursor: pointer; box-shadow: 0 6px 20px rgba(74, 13, 33, 0.3);
+}
+.motion-panel__card {
+  width: min(320px, calc(100vw - 32px)); background: #fffaf0; border: 1px solid var(--border);
+  border-radius: 16px; padding: 16px; box-shadow: 0 14px 40px rgba(74, 13, 33, 0.22);
+}
+.motion-panel__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; color: var(--primary); }
+.motion-panel__close { background: none; border: 0; font-size: 1.4rem; cursor: pointer; color: var(--muted); line-height: 1; }
+.motion-panel__presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--bg-alt); padding: 4px; border-radius: 10px; margin-bottom: 12px; }
+.motion-panel__presets button { border: 0; background: none; padding: 7px 0; border-radius: 7px; font: 600 0.85rem 'Mukta', sans-serif; color: var(--text); cursor: pointer; }
+.motion-panel__presets button.is-active { background: var(--primary); color: #fff; }
+.motion-panel__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.motion-panel__list label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-weight: 600; font-size: 0.93rem; }
+.motion-panel__list input { margin-top: 4px; accent-color: var(--primary); }
+.motion-panel__list small { display: block; font-weight: 400; color: var(--muted); font-size: 0.8rem; line-height: 1.35; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .dhero { padding: 110px 0 140px; }
+  .hide-sm { display: none; }
+  .dhero__rangoli { transform: scale(0.65); bottom: -130px; }
+  .dhero__rangoli--left { left: -120px; }
+  .dhero__rangoli--right { right: -120px; }
+  .dhero__diya { transform: scale(0.75); bottom: 10px; }
+  .dhero__diya--left { left: 8px; }
+  .dhero__diya--right { right: 8px; }
+}
+
+/* ================= Motion graphics (switched by fx-* classes on <html>) ================= */
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+@keyframes sparkle { 0%, 100% { opacity: 0.15; transform: scale(0.6) rotate(0deg); } 50% { opacity: 0.95; transform: scale(1.1) rotate(20deg); } }
+@keyframes flicker {
+  0% { transform: scale(1, 1) skewX(0deg); }
+  25% { transform: scale(0.94, 1.06) skewX(2deg); }
+  50% { transform: scale(1.03, 0.95) skewX(-2deg); }
+  75% { transform: scale(0.97, 1.04) skewX(1deg); }
+  100% { transform: scale(1, 1) skewX(0deg); }
+}
+@keyframes glow-pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+@keyframes sway { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes rise {
+  0% { transform: translate(0, 0) rotate(-2deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { transform: translate(var(--drift), -820px) rotate(2deg); opacity: 0; }
+}
+@keyframes petal-fall {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(40px, 50vh) rotate(200deg); }
+  100% { transform: translate(-20px, 105vh) rotate(420deg); }
+}
+
+.fx-twinkle .bulb { animation: twinkle 2.2s ease-in-out infinite; animation-delay: var(--d); }
+.fx-twinkle .sparkle { animation: sparkle 3.2s ease-in-out infinite; animation-delay: var(--d); }
+.fx-flicker .flame { animation: flicker 0.9s ease-in-out infinite; }
+.fx-flicker .diya-glow { animation: glow-pulse 1.6s ease-in-out infinite; }
+.fx-sway .lantern-hang { animation: sway 3.6s ease-in-out infinite alternate; }
+.fx-sway .garland { animation: sway 4.4s ease-in-out infinite alternate-reverse; }
+.fx-sway .lantern-hang:nth-child(even) { animation-duration: 4.2s; }
+.fx-rangoli .rangoli { animation: spin 70s linear infinite; }
+.fx-skyLanterns .sky-lantern { top: auto !important; bottom: -60px; animation: rise var(--dur) linear infinite; animation-delay: var(--delay); }

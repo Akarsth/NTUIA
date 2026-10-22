@@ -9,6 +9,7 @@ import News from './pages/News.jsx'
 import Gallery from './pages/Gallery.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
+import MotionPanel from './motion/MotionPanel.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -34,6 +35,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <MotionPanel />
     </>
   )
 }

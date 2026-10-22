@@ -13,6 +13,20 @@ npm run dev
 
 Open http://localhost:5173.
 
+### Working on the remote server over SSH
+
+The live-reload dev server shows a blank page through an SSH tunnel, so use the auto-rebuilding preview instead:
+
+```bash
+npm run remote
+```
+
+On your own computer, open a tunnel and browse to http://localhost:4173. Refresh after each change.
+
+```bash
+ssh -N -L 4173:localhost:4173 ak@140.112.12.186
+```
+
 ## Build and preview
 
 ```bash
